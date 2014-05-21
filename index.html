@@ -11,19 +11,47 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Templates -->
+        <center>
+            <h2 align="center">Todo List</h2>
+            <button id="create" type="button" class="btn btn-success" align="center">
+                <span class="glyphicon glyphicon-plus" align="center"></span>
+            </button>
+            <br><br><br>
+            <table class="table table-striped listcontainer">
+                <thead></thead>
+                <tbody id="todolist"></tbody>
+            </table>
+        </center>
 
-        <script src="lib/jquery.min.js"></script>
-        <script src="lib/jquery-ui-1.10.4.custom.min.js"></script>
-        <script src="lib/underscore-min.js"></script>
-        <script src="lib/backbone-min.js"></script>
+        <!-- Templates -->
+        <script id="itemtemplate" type="text/template">
+            <td>
+                <label id="show"><%- text %></label>
+                <input id="edit" value="<%- text %>">
+            </td>
+        </script>
+
+        <!-- Libraries -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="models/item.js"></script>
+        <script src="collections/items.js"></script>
+        <script src="views/item_view.js"></script>
+        <script src="views/items_view.js"></script>
+        <script src="todolist.js"></script>
      </body>
 </html>
